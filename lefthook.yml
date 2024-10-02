@@ -1,0 +1,10 @@
+pre-commit:
+    commands:
+        prettier:
+            glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}'
+            run: npx prettier --write {staged_files}
+            stage_fixed: true
+        eslint:
+            glob: '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}'
+            run: npx eslint --fix {staged_files} --ignore-path .gitignore
+            stage_fixed: true
